@@ -346,7 +346,9 @@ class RRTStar:
                 fontsize=10, verticalalignment='top',
                 bbox=dict(boxstyle="round,pad=0.5", facecolor="lightgreen", alpha=0.8))
         
-        plt.colorbar(plt.cm.ScalarMappable(cmap='Blues'), label='节点成本')
+        # 创建colorbar
+        scatter = plt.scatter([], [], c=[], cmap='Blues', s=0)  # 虚拟scatter用于colorbar
+        plt.colorbar(scatter, label='节点成本')
         plt.tight_layout()
         plt.show()
 
